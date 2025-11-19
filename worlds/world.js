@@ -19,33 +19,4 @@ export class World {
     this.scene.add(ground);
 
     // Licht
-    const light = new THREE.DirectionalLight(0xffffff, 1);
-    light.position.set(10,10,10);
-    this.scene.add(light);
-
-    // Controls
-    this.controls = new THREE.PointerLockControls(camera, document.body);
-    document.body.addEventListener("click", () => this.controls.lock());
-    this.scene.add(this.controls.getObject());
-  }
-
-  update(delta) {
-    // simple Bewegung
-    const vel = this.player.velocity;
-
-    vel.x *= 0.9;
-    vel.z *= 0.9;
-
-    // Beispiel WASD Steuerung
-    if (this.controls.isLocked) {
-      vel.z -= 0.1;
-    }
-
-    this.controls.moveRight(vel.x * delta);
-    this.controls.moveForward(vel.z * delta);
-  }
-
-  resume() {
-    console.log("Zurück in der Welt");
-  }
-}
+    const light = new THREE
